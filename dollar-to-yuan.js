@@ -9,7 +9,7 @@ const assert = require('assert');
 
 const usdcny = (usd) => `${(usd * 6.75).toFixed(2)} Chinese Yuan`
 
-console.log(usdcny())
+
 //TESTS
 assert.deepStrictEqual(usdcny(15), '101.25 Chinese Yuan');
 assert.deepStrictEqual(usdcny(465), '3138.75 Chinese Yuan');
