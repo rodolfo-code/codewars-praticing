@@ -4,9 +4,10 @@
 const assert = require('assert');
 
 // Código
-const filter_list = (l) => l.filter(element => element === parseInt(element))
+const filter_list = (l) => l.filter(element => element === parseInt(element));
 
-
+//Ou
+//const filter_list = (l) => l.filter(Number.isInteger)
 
 // Unit test
 assert.deepStrictEqual(filter_list([1,2,'a','b']),[1,2])
