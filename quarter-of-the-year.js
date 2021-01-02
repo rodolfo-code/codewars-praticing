@@ -11,14 +11,14 @@ const quarterOf = (month) => {
   return Math.ceil(month / 3);
 };
 
-
-const index = Math.ceil(Math.random() * 12);
-if (index < 4) {
-  assert.deepStrictEqual(quarterOf(index), 1);
-} else if (index < 7) {
-  assert.deepStrictEqual(quarterOf(index), 2);
-} else if (index < 10) {
-  assert.deepStrictEqual(quarterOf(index), 3);
+// Test
+const month = Math.ceil(Math.random() * 12);
+if (month < 4) {
+  assert.deepStrictEqual(quarterOf(month), 1);
+} else if (month < 7) {
+  assert.deepStrictEqual(quarterOf(month), 2);
+} else if (month < 10) {
+  assert.deepStrictEqual(quarterOf(month), 3);
 } else {
-  assert.deepStrictEqual(quarterOf(index), 4);
+  assert.deepStrictEqual(quarterOf(month), 4);
 }
