@@ -29,13 +29,7 @@ const checkExam = (array1, array2) =>
       ), 0)) > 0 ? grade: 0;
 
 // Unit test
-assert.deepStrictEqual(
-  checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]),
-  6
-);
+assert.deepStrictEqual(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]), 6);
 assert.deepStrictEqual(checkExam(["a", "a", "c", "b"], ["a", "a", "b", ""]), 7);
-assert.deepStrictEqual(
-  checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]),
-  16
-);
+assert.deepStrictEqual(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]), 16);
 assert.deepStrictEqual(checkExam(["b", "c", "b", "a"], ["", "a", "a", "c"]), 0);
