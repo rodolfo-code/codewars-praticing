@@ -10,21 +10,32 @@
 const assert = require("assert");
 
 // Código
-const checkExam = (array1, array2) => {
-  let grade = 0;
-  array2.forEach((element, index, array) => {
-    array2[index].length === 0 ? (grade += 0)
-      : element === array1[index] ? (grade += 4)
-      : element !== array1[index] ? (grade -= 1)
-      : grade;
-  });
-  grade < 0 ? grade = 0 : grade;
-  return grade;
-};
+// const checkExam = (array1, array2) => {
+//   let grade = 0;
+//   array2.forEach((element, index) => {
+//     element === '' ? (grade += 0)
+//       : element === array1[index] ? (grade += 4)
+//       : element !== array1[index] ? (grade -= 1)
+//       : grade;
+//   });
+//   grade < 0 ? grade = 0 : grade;
+//   return grade;
+// };
 
+const checkExam = (array1, array2) =>
+  (grade = array2.reduce(
+    (acc, curr, index) =>
+      acc + (curr === array1[index] ? 4 : curr === "" ? 0 : -1
+      ), 0)) > 0 ? grade: 0;
 
 // Unit test
-assert.deepStrictEqual(checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]), 6);
+assert.deepStrictEqual(
+  checkExam(["a", "a", "b", "b"], ["a", "c", "b", "d"]),
+  6
+);
 assert.deepStrictEqual(checkExam(["a", "a", "c", "b"], ["a", "a", "b", ""]), 7);
-assert.deepStrictEqual(checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]), 16);
+assert.deepStrictEqual(
+  checkExam(["a", "a", "b", "c"], ["a", "a", "b", "c"]),
+  16
+);
 assert.deepStrictEqual(checkExam(["b", "c", "b", "a"], ["", "a", "a", "c"]), 0);
