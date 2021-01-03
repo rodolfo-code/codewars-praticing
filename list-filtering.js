@@ -7,7 +7,7 @@ const assert = require('assert');
 const filter_list = (l) => l.filter(element => element === parseInt(element));
 
 //Ou
-//const filter_list = (l) => l.filter(Number.isInteger)
+//const filter_list = (l) => l.filter(element => typeof element == "number")
 
 // Unit test
 assert.deepStrictEqual(filter_list([1,2,'a','b']),[1,2])
