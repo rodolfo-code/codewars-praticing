@@ -7,13 +7,13 @@ const assert = require('assert');
 
 // Código
 const digital_root = (n) => {
-  let cont = 
-  if(n.length > 1) {
-    n.split('')
+  let total = n
+  while (total.toString().length > 1) {
+    total = total.toString().split('').reduce((acc, curr) => Number(acc) + Number(curr))
   }
-
+  return total
 }
 
-console.log(digital_root(123))
-
 // Unit test
+assert.deepStrictEqual( digital_root(16), 7 )
+assert.deepStrictEqual( digital_root(456), 6 )
