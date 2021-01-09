@@ -8,10 +8,20 @@
 const assert = require('assert');
 
 // Código
-const calcType = (a, b, res) =>
-  res === a + b ? 'addition' : 
-  res === a * b ? 'multiplication' : 
-  res === a - b ? 'subtraction' : 'division';
+// const calcType = (a, b, res) =>
+//   res === a + b ? 'addition' : 
+//   res === a * b ? 'multiplication' : 
+//   res === a - b ? 'subtraction' : 'division';
+
+const calcType = (a, b, res) => {
+  const obj = {
+    [a + b]: 'addition',
+    [a * b]: 'multiplication',
+    [a - b]: 'subtraction',
+    [a / b]: 'division',
+  }
+  return obj[res]
+}
 
 // Unit Test
 assert.deepStrictEqual(calcType(1,2,3),'addition');
